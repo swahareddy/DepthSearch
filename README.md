@@ -19,14 +19,16 @@ This is best suited for Depth=1. Depths>=2 can take very long to be searched.
 >3. Research papers have average..citations
 
 ## Next steps:
-* PDF compatibility (for research papers)
-* *Add an ad checker?* https://github.com/notracking/hosts-blocklists This list is so large that I need to compare (execution time of actually searching through ad URL) vs (finding URL in list of 2-4lakh ad domains) 
-* If counting is not too expensive, first get all count?
-* Collect all dictionaries into a final data structure instead of printing at each iteration
+1. PDF compatibility (for research papers).
+2. *Add an ad checker?* https://github.com/notracking/hosts-blocklists This list is so large that I need to compare (execution time of actually searching through ad URL) vs (finding URL in list of 2-4lakh ad domains) 
+3. If counting is not too expensive, first get *all count*?
+4. Collect all dictionaries into a final data structure instead of printing at each iteration
 
 ### How to reduce time ?
+* <s>Delete duplicate links found in a URL</s> 
+* <s>Do not bother with a link if it has already been processed earlier</s> 
+* **Dive deeper only in URLs that have non-zero matches**
 * Open the URL only once (instead of once for searching for links within and once for finding matchs)
-* Dive deeper only in URLs that have non-zero matches
 
 </br></br></br>
 *Wanted this to be a browser extension. But given that time taken can be more than a minute for even depth=1, this will need to be reevaluated*
