@@ -1,5 +1,5 @@
 Does your browser often look like this?
-![toomanytabs](Images\toomaytabs.jpeg)
+![toomanytabs](Images/toomaytabs.jpeg)
 Often this is a consequence of me reading one important article and opening up many links within it [in the background](https://chrome.google.com/webstore/detail/right-click-opens-link-ne/mhjkeimpgjokbjmioglhlngefbddppnn).
 
 I wondered if there is any way for me to know which links are important (Eg which wikipedia references are significant) without having to open them up. So basically a way of doing a `Ctrl + F` through all the links in a page, and not just the page itself. Not that hard right?
@@ -18,7 +18,7 @@ Ofc, the first place I go for such tools is the Chrome Web Store (where I have f
 
 I wanted this tool to be a browser extension, because that's the only practical way someone is going to use it. Hardly anyone is going to run a python script for a URL that interests them.
 
-![my vision](Images\chrome_wireframe.jpg)
+![my vision](Images/chrome_wireframe.jpg)
 
 I was aware that it was going to have **exponential time complexity (O(c<sup>n</sup>)**, but I thought that the operations itself (text search) is not that expensive (*Boy was I wrong*), and almost no one will really need a depth>2
 
@@ -41,7 +41,7 @@ My observations on all the cases I encountered:
 
 * **Advertisements** were not really a problem, for some reason they were not even showing up in my code's extracted URLs. Maybe has something to do with the way they are rendered on front end? Idk. I still looked into some solutions and would have probably come up with something using a [mature list](https://github.com/notracking/hosts-blocklists) and implemented using [bloom filters](https://www.wikiwand.com/en/Bloom_filter).
 
-* I was using a regex to pick stuff that looks like a URL. i.e starts with http, www etc.. But I later caught some links that were being left out ![](Images\runnersworld.jpg) So I made sure to catch them too.
+* I was using a regex to pick stuff that looks like a URL. i.e starts with http, www etc.. But I later caught some links that were being left out ![](Images/runnersworld.jpg) So I made sure to catch them too.
 
 ---
 ---
@@ -49,7 +49,7 @@ My observations on all the cases I encountered:
 
 If you don't mind, you can use this a locally or in Colab as a notebook. But as to the question of putting it in a browser extension, I am not sure how that will work.
 
-Since even Depth=1 can take a couple of minutes ![](Images\notime.jpg) (when run through an IPython kenrel on a 1.6Ghz 8GBRAM Windows 10 machine), its probably going to be even slower running as a chrome extension (If you know more about this, please reach out to me).
+Since even Depth=1 can take a couple of minutes ![](Images/notime.jpg) (when run through an IPython kenrel on a 1.6Ghz 8GBRAM Windows 10 machine), its probably going to be even slower running as a chrome extension (If you know more about this, please reach out to me).
 
 So maybe server-side processing is the way to go rather than client side. Then I might be able to use better machines from GCE too. ^
 
